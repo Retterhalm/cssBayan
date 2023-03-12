@@ -1,8 +1,13 @@
 .wrapper {
   width: 100vw;
   max-height: 100vh;
-  background-color: lemonchiffon;
+  background-color: antiquewhite;
   margin: 0 auto;
+}
+
+h1 {
+  color: blue;
+  text-align: center;
 }
 
 .main {
@@ -25,15 +30,35 @@
   display: block;
 }
 
+.meme-wrapper:hover .meme-switch:checked+.meme-img {
+  display: block;
+}
+
 .meme-wrapper:hover .description-wrapper {
   font-weight: 900;
 }
 
 .meme-wrapper:hover .accordion-icon {
   transform: rotate(45deg);
-  transition: 0.5 s ease-in-out
+  transition: 0.5 s ease-in-out;
 }
 
+.meme-wrapper:has(.meme-switch:checked) .accordion-icon {
+  transform: rotate(45deg);
+  transition: 0.5 s ease-in-out;
+  text-shadow: 0 0 0.5em #000;
+}
+
+.meme-wrapper:has(.meme-switch:checked) .description-wrapper {
+  font-weight: 900;
+  text-shadow: 0 0 0.5em #000;
+}
+
+
+
+.meme-header {
+  display: none;
+}
 
 .description-wrapper {
   width: 100%;
@@ -42,6 +67,7 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  color: blue;
   font: 400 1rem 'Monotype', sans-serif
 }
 
