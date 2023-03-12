@@ -1,73 +1,99 @@
-.wrapper{
+.wrapper {
   width: 100vw;
   max-height: 100vh;
-  background-color: blanchedalmond;
+  background-color: lemonchiffon;
   margin: 0 auto;
 }
 
-.main{
-  margin: 0 auto ;
+.main {
+  margin: 0 auto;
   width: 80%;
 }
-.main:hover .accordion-icon{
+
+.main:hover .accordion-icon {
   display: block;
 
 }
-.meme-wrapper{
-  width: 90%;
 
+.meme-wrapper {
+  width: 90%;
   margin: 0 auto;
+}
+
+.meme-wrapper:hover .meme-img {
+  animation: showMeme 1.5s;
+  display: block;
+}
+
+.meme-wrapper:hover .description-wrapper {
+  font-weight: 900;
+}
+
+.meme-wrapper:hover .accordion-icon {
+  transform: rotate(45deg);
+  transition: 0.5 s ease-in-out
 }
 
 
 .description-wrapper {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font: 400 1rem 'Monotype', sans-serif
 }
 
-.meme-wrapper:has( > .description-wrapper:hover) .meme-img{
-  display: block;
-}
 .description-wrapper:hover {
- font-size: 2rem;
+
+  text-shadow: 0 0 0.5em #000;
 }
-.description-wrapper:hover .accordion-icon{
-  transform: rotate(45deg);
-}
-.accordion-icon{
-  display:none;
-  font: 700 2em/100% 'Monotype',sans-serif;
+
+.accordion-icon {
+  display: none;
+  font: 700 2em/100% 'Monotype', sans-serif;
   cursor: pointer
 }
 
-.meme-switch{
-
-  width:0;
-  height:0;
+.meme-switch {
+  width: 0;
+  height: 0;
   z-index: 100;
 }
-.img-wrapper{
-  width:100%;
+
+.img-wrapper {
+  width: 100%;
   height: 100%;
 }
 
+@keyframes showMeme {
+  0% {
+    opacity: 0%;
+  }
 
-.meme-switch:checked + .meme-img{
-  display:block;
+  50% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
+
+.meme-switch:checked+.meme-img {
+  display: block;
+}
+
 .meme-img {
   display: none;
-  margin: -3% 30% 0 30%;
+  margin: -1% 30% 0 30%;
   width: 30%;
   cursor: pointer;
 }
 
 
-.meme-img:hover{
+.meme-img:hover {
   display: block;
 }
 
@@ -75,6 +101,3 @@
 details summary {
   list-style: none;
 }
-
-
-
